@@ -7,7 +7,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
-import org.modelmapper.ModelMapper;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +16,6 @@ import org.springframework.stereotype.Service;
 public class KafkaConsumer {
 
     private final ObjectMapper objectMapper;
-    private  final ModelMapper modelMapper;
     @SneakyThrows
     @KafkaListener(topics = "weather", groupId = "weather_group")
     public void listen(ConsumerRecord<String, String> record) throws JsonProcessingException {

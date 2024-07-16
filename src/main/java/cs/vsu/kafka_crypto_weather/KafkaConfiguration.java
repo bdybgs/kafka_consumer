@@ -7,9 +7,4 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class KafkaConfiguration {
 
-    @Bean
-    public ModelMapper modelMapper() {
-        return new ModelMapper();
-    }
-
 }
