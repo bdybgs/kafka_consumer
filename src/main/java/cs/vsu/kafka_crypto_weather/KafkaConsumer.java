@@ -26,11 +26,8 @@ public class KafkaConsumer {
         var parser = objectMapper.treeAsTokens(jsonNode);
         var value = objectMapper.readValue(parser, WeatherDataDTO.class);
 
-        String city = value.getCity();
-        if ("Dubai".equals(city)) {
-            log.info(city);
-        }
-
+//        String cityInfo = value.getCity() + " " + value.getTemp();
+//        log.info(cityInfo);
 //        modelMapper.map(record, WeatherData.class);
 
         log.info("Received " + value);
