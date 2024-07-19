@@ -17,11 +17,11 @@ public class CryptoWeatherService {
 
     private final CryptoManualService cryptoManualService;
 
-    public List<CryptoWeatherDataDTO> loadCryptoForCity(WeatherDTO weatherDTO) {
-        Set<String> cryptoSymbols = cryptoManualService.findAllCryptoSymbolsByCity(weatherDTO.getCity());
+    public List<CryptoWeatherDataDTO> loadCryptoByCity(WeatherDTO weatherDTO) {
+        var cryptoSymbols = cryptoManualService.findAllCryptoSymbolsByCity(weatherDTO.getCity());
         var res = new LinkedList<CryptoWeatherDataDTO>();
-        for (String symbol: cryptoSymbols) {
-            CryptoManual cryptoManual = cryptoManualService.findBySymbolIgnoreCase(symbol);
+        for (var symbol: cryptoSymbols) {
+            var cryptoManual = cryptoManualService.findBySymbolIgnoreCase(symbol);
             var cryptoWeatherState = getCurrentCryptoWeatherStateByTemp(
                     weatherDTO.getTemp(), cryptoManual.getBuyBorder(), cryptoManual.getSellBorder()
             );

@@ -10,7 +10,7 @@ import java.util.UUID;
 public interface CryptoManualRepository extends JpaRepository<CryptoManual, UUID> {
     boolean existsBySymbolIgnoreCase(String symbol);
 
-    CryptoManual findBySymbolIgnoreCase (String symbol);
+    CryptoManual findBySymbolIgnoreCase(String symbol);
     void deleteBySymbolIgnoreCase(String symbol);
 
 }
