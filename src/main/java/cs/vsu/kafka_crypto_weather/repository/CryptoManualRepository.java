@@ -4,8 +4,6 @@ import cs.vsu.kafka_crypto_weather.entity.CryptoManual;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
-import java.util.Set;
 import java.util.UUID;
 
 @Repository
