@@ -1,4 +1,4 @@
-package cs.vsu.kafka_crypto_weather;
+package cs.vsu.kafka_crypto_weather.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 

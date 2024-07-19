@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 @Service
 @RequiredArgsConstructor
@@ -19,7 +20,7 @@ public class CryptoWeatherService {
     private final CryptoManualService cryptoManualService;
 
     public List<CryptoWeatherDataDTO> loadCryptoForCity(WeatherDTO weatherDTO) {
-        List<String> cryptoSymbols = cryptoManualService.findAllCryptosByCity(weatherDTO.getCity());
+        Set<String> cryptoSymbols = cryptoManualService.findAllCryptosByCity(weatherDTO.getCity());
         var res = new LinkedList<CryptoWeatherDataDTO>();
         for (String symbol: cryptoSymbols) {
             CryptoManual cryptoManual = cryptoManualService.findBySymbolIgnoreCase(symbol);
