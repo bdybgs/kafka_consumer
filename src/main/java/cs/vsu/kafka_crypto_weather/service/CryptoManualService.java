@@ -20,4 +20,8 @@ public class CryptoManualService {
         }
         return symbols;
     }
+
+    public CryptoManual findBySymbolIgnoreCase(String symbol) {
+        return cryptoManualRepository.findBySymbolIgnoreCase(symbol);
+    }
 }
