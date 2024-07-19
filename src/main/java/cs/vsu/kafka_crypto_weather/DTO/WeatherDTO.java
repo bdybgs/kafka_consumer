@@ -8,7 +8,7 @@ import java.util.Date;
 @Getter@Setter
 @Builder
 @ToString
-public class WeatherDataDTO {
+public class WeatherDTO {
     private String id;
 
     private String city;
