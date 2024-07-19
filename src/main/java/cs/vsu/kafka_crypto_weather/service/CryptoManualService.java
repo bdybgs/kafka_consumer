@@ -16,7 +16,9 @@ public class CryptoManualService {
         var cryptoManuals = cryptoManualRepository.findAll();
         var symbols = new HashSet<String>();
         for (CryptoManual cryptoManual : cryptoManuals) {
-            symbols.add(cryptoManual.getSymbol());
+            if (cryptoManual.getCity().equals(city)) {
+                symbols.add(cryptoManual.getSymbol());
+            }
         }
         return symbols;
     }
